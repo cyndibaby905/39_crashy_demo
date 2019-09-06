@@ -1,0 +1,1 @@
+一个使用了[Bugly 插件](https://github.com/cyndibaby905/39_flutter_crash_plugin)的demo工程
