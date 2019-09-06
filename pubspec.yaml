@@ -24,7 +24,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_crash_plugin:
-    path: /Users/hangchen/Documents/FlutterDemo/flutter_crash_plugin
+    git:
+      url: https://github.com/cyndibaby905/39_flutter_crash_plugin.git
 
 
 dev_dependencies:
