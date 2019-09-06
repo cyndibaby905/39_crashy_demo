@@ -10,7 +10,7 @@ bool get isInDebugMode {
   return inDebugMode;
 }
 
-/// Reports [error] along with its [stackTrace] to Sentry.io.
+/// Reports [error] along with its [stackTrace] to Bugly.
 Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
   print('Caught error: $error');
 
@@ -25,6 +25,16 @@ Future<Null> main() async {
   FlutterError.onError = (FlutterErrorDetails details) async {
     Zone.current.handleUncaughtError(details.exception, details.stack);
   };
+
+  ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails){
+    print(flutterErrorDetails.toString());
+    return Scaffold(
+      body: Center(
+        child: Text("Custom Error Widget"),
+      )
+    );
+  };
+
 
   runZoned<Future<Null>>(() async {
     runApp(MyApp());
