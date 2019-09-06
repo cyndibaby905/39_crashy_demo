@@ -95,20 +95,6 @@ class MyHomePage extends StatelessWidget {
                 await bar();
               },
             ),
-            RaisedButton(
-              child: Text('Native exception'),
-              elevation: 1.0,
-              onPressed: ()  {
-                FlutterCrashPlugin.testNativeCrash();
-              },
-            ),
-            RaisedButton(
-              child: Text('Java exception'),
-              elevation: 1.0,
-              onPressed: ()  {
-                FlutterCrashPlugin.testJavaCrash();
-              },
-            ),
           ],
         ),
       ),
