@@ -85,14 +85,15 @@ class MyHomePage extends StatelessWidget {
             new RaisedButton(
               child: Text('async Dart exception'),
               elevation: 1.0,
-              onPressed: () async {
-                foo() async {
-                  throw StateError('This is an async Dart exception.');
+              onPressed: () {
+                try {
+                  //Future.delayed(Duration(seconds: 1)).then((e) => Future.error("This is an async Dart exception."));
+                  Future.delayed(Duration(seconds: 1)).then((e) => throw StateError('This is a Dart exception in Future.'));
                 }
-                bar() async {
-                  await foo();
+                catch(e) {
+                  print("This line will never be executed. ");
                 }
-                await bar();
+
               },
             ),
           ],
